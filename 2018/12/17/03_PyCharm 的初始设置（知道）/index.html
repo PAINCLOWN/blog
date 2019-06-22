@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+  <link rel="stylesheet" href="/blog/lib/needsharebutton/needsharebutton.css">
+
+
+
+
+  
+  
+    
+    
+  <script src="/blog/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/blog/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/blog/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Gemini',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="PyCharm 的初始设置（知道）目标 恢复 PyCharm 的初始设置 第一次启动 PyCharm 新建一个 Python 项目 设置 PyCharm 的字体显示 PyCharm 的升级以及其他  PyCharm 的官方网站地址是：https://www.jetbrains.com/pycharm/ 01. 恢复 PyCharm 的初始设置PyCharm 的 配置信息 是保存在 用户家目录下 的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="03_PyCharm 的初始设置（知道）">
+<meta property="og:url" content="https://PAINCLOWN.github.io/blog/2018/12/17/03_PyCharm 的初始设置（知道）/index.html">
+<meta property="og:site_name" content="PA1NCL0WN^s BLOG">
+<meta property="og:description" content="PyCharm 的初始设置（知道）目标 恢复 PyCharm 的初始设置 第一次启动 PyCharm 新建一个 Python 项目 设置 PyCharm 的字体显示 PyCharm 的升级以及其他  PyCharm 的官方网站地址是：https://www.jetbrains.com/pycharm/ 01. 恢复 PyCharm 的初始设置PyCharm 的 配置信息 是保存在 用户家目录下 的">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.loli.net/2018/12/17/5c174e804cb5f.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/12/17/5c174e8113d94.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/12/17/5c174e8149ca1.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/12/17/5c174e81d756a.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/12/17/5c174e835bb71.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/12/17/5c174e8455125.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/12/17/5c174e86bcd3e.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/12/17/5c174e8817cd4.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/12/17/5c174e8836276.jpg">
+<meta property="og:updated_time" content="2019-06-22T03:31:27.617Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="03_PyCharm 的初始设置（知道）">
+<meta name="twitter:description" content="PyCharm 的初始设置（知道）目标 恢复 PyCharm 的初始设置 第一次启动 PyCharm 新建一个 Python 项目 设置 PyCharm 的字体显示 PyCharm 的升级以及其他  PyCharm 的官方网站地址是：https://www.jetbrains.com/pycharm/ 01. 恢复 PyCharm 的初始设置PyCharm 的 配置信息 是保存在 用户家目录下 的">
+<meta name="twitter:image" content="https://i.loli.net/2018/12/17/5c174e804cb5f.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="https://PAINCLOWN.github.io/blog/2018/12/17/03_PyCharm 的初始设置（知道）/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>03_PyCharm 的初始设置（知道） | PA1NCL0WN^s BLOG</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion .logo-line-before i { left: initial; }
+    .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">PA1NCL0WN^s BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>时光机</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-code">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="http://PAINCLOWN.github.io/code" rel="section"><i class="menu-item-icon fa fa-fw fa-file-code-o"></i> <br>CODE</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-mainhome">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="http://PAINCLOWN.github.io" rel="section"><i class="menu-item-icon fa fa-fw fa-flag"></i> <br>主站</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://PAINCLOWN.github.io/blog/blog/2018/12/17/03_PyCharm 的初始设置（知道）/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="鐺鐺鐺™">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="PA1NCL0WN^s BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">03_PyCharm 的初始设置（知道）
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span title="post.wordcount">
+            共1.5k 字 | 
+          </span>
+
+          <span title="post.min2read">
+          阅读时间约5 分钟 | 
+          </span>
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-17 15:45:17" itemprop="dateCreated datePublished" datetime="2018-12-17T15:45:17+08:00">2018-12-17</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-22 11:31:27" itemprop="dateModified" datetime="2019-06-22T11:31:27+08:00">2019-06-22</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/blog/categories/python教程/" itemprop="url" rel="index"><span itemprop="name">python教程</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/2018/12/17/03_PyCharm 的初始设置（知道）/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/blog/2018/12/17/03_PyCharm 的初始设置（知道）/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="PyCharm-的初始设置（知道）"><a href="#PyCharm-的初始设置（知道）" class="headerlink" title="PyCharm 的初始设置（知道）"></a>PyCharm 的初始设置（知道）</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>恢复 PyCharm 的初始设置</li>
+<li>第一次启动 PyCharm</li>
+<li>新建一个 Python 项目</li>
+<li>设置 PyCharm 的字体显示</li>
+<li>PyCharm 的升级以及其他</li>
+</ul>
+<p>PyCharm 的官方网站地址是：<a href="https://www.jetbrains.com/pycharm/" target="_blank" rel="noopener">https://www.jetbrains.com/pycharm/</a></p>
+<h2 id="01-恢复-PyCharm-的初始设置"><a href="#01-恢复-PyCharm-的初始设置" class="headerlink" title="01. 恢复 PyCharm 的初始设置"></a>01. 恢复 PyCharm 的初始设置</h2><p><code>PyCharm</code> 的 <strong>配置信息</strong> 是保存在 <strong>用户家目录下</strong> 的 <code>.PyCharmxxxx.x</code> 目录下的， <code>xxxx.x</code> 表示当前使用的 <code>PyCharm</code> 的版本号</p>
+<p>如果要恢复 <code>PyCharm</code> 的初始设置，可以按照以下步骤进行：</p>
+<ul>
+<li>1. 关闭正在运行的 <code>PyCharm</code></li>
+<li>2. 在终端中执行以下终端命令，删除 <code>PyCharm</code> 的配置信息目录：</li>
+</ul>
+<pre>    `$ rm -r ~/.PyCharm2016.3
+` 
+  </pre>
+
+<ul>
+<li>3. 重新启动 <code>PyCharm</code></li>
+</ul>
+<h2 id="02-第一次启动-PyCharm"><a href="#02-第一次启动-PyCharm" class="headerlink" title="02. 第一次启动 PyCharm"></a>02. 第一次启动 PyCharm</h2><ol>
+<li>导入配置信息</li>
+<li>选择许可协议</li>
+<li>配置初始界面</li>
+</ol>
+<h3 id="2-1-导入配置信息"><a href="#2-1-导入配置信息" class="headerlink" title="2.1 导入配置信息"></a>2.1 导入配置信息</h3><ul>
+<li>在第一次启动 <code>PyCharm</code> 时，会首先提示用户是否导入 <strong>之前的配置信息</strong></li>
+<li>如果是第一次使用，直接点击 <strong>OK</strong> 按钮</li>
+</ul>
+<p><img src="https://i.loli.net/2018/12/17/5c174e804cb5f.jpg" alt="001_PyCharm导入配置信息">￼</p>
+<h3 id="2-2-选择许可协议"><a href="#2-2-选择许可协议" class="headerlink" title="2.2 选择许可协议"></a>2.2 选择许可协议</h3><ul>
+<li>PyCharm 是一个付费软件，购买费用为 <strong>199$ / 年</strong> 或者 <strong>19.90$ ／ 月</strong></li>
+<li>不过 PyCharm 提供了对 <strong>学生和教师免费使用的版本</strong><ul>
+<li>下载地址是：<a href="https://www.jetbrains.com/pycharm-edu/download/#section=linux" target="_blank" rel="noopener">https://www.jetbrains.com/pycharm-edu/download/#section=linux</a></li>
+</ul>
+</li>
+<li>商业版本会提示输入注册信息，或者选择免费评估</li>
+</ul>
+<p><img src="https://i.loli.net/2018/12/17/5c174e8113d94.jpg" alt="002_激活许可证">￼</p>
+<h3 id="2-3-PyCharm-的配置初始界面"><a href="#2-3-PyCharm-的配置初始界面" class="headerlink" title="2.3 PyCharm 的配置初始界面"></a>2.3 PyCharm 的配置初始界面</h3><ul>
+<li>在初始配置界面，可以通过 <code>Editor colors and fonts</code> 选择 <strong>编辑器的配色方案</strong></li>
+</ul>
+<p><img src="https://i.loli.net/2018/12/17/5c174e8149ca1.jpg" alt="003_PyCharm初始配置界面">￼</p>
+<h3 id="2-4-欢迎界面"><a href="#2-4-欢迎界面" class="headerlink" title="2.4 欢迎界面"></a>2.4 欢迎界面</h3><ul>
+<li>所有基础配置工作结束之后，就可以看到 <code>PyCharm</code> 的 <strong>欢迎界面</strong>了，通过 <strong>欢迎界面</strong> 就可以开始开发 Python 项目了</li>
+</ul>
+<p><img src="https://i.loli.net/2018/12/17/5c174e81d756a.jpg" alt="004_PyCharm欢迎页面">￼</p>
+<h2 id="03-新建-打开一个-Python-项目"><a href="#03-新建-打开一个-Python-项目" class="headerlink" title="03. 新建/打开一个 Python 项目"></a>03. 新建/打开一个 Python 项目</h2><h3 id="3-1-项目简介"><a href="#3-1-项目简介" class="headerlink" title="3.1 项目简介"></a>3.1 项目简介</h3><ul>
+<li>开发 <strong>项目</strong> 就是开发一个 <strong>专门解决一个复杂业务功能的软件</strong></li>
+<li>通常每 <strong>一个项目</strong> 就具有一个 <strong>独立专属的目录</strong>，用于保存 <strong>所有和项目相关的文件</strong><ul>
+<li>一个项目通常会包含 <strong>很多源文件</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="3-2-打开-Python-项目"><a href="#3-2-打开-Python-项目" class="headerlink" title="3.2 打开 Python 项目"></a>3.2 打开 Python 项目</h3><ul>
+<li>直接点击 <strong>Open</strong> 按钮，然后浏览到之前保存 <strong>Python 文件的目录</strong>，既可以打开项目</li>
+<li>打开之后，会在目录下新建一个 <code>.idea</code> 的目录，用于保存 <strong>项目相关的信息</strong>，例如： <strong>解释器版本</strong>、 <strong>项目包含的文件</strong>等等</li>
+<li>第一次打开项目，需要耐心等待 <code>PyCharm</code> 对项目 <strong>进行初始设置</strong></li>
+</ul>
+<p><img src="https://i.loli.net/2018/12/17/5c174e835bb71.jpg" alt="005_打开已有Python项目">￼</p>
+<h4 id="设置项目使用的解释器版本"><a href="#设置项目使用的解释器版本" class="headerlink" title="设置项目使用的解释器版本"></a>设置项目使用的解释器版本</h4><ul>
+<li>打开的目录如果不是由 <code>PyCharm</code> 建立的项目目录， <strong>有的时候</strong> 使用的解释器版本是 <code>Python 2.x</code> 的，需要 <strong>单独设置解释器的版本</strong></li>
+<li>通过 <strong>File</strong> / <strong>Settings…</strong> 可以打开设置窗口，如下图所示：</li>
+</ul>
+<p><img src="https://i.loli.net/2018/12/17/5c174e8455125.jpg" alt="006_选择项目的解释器版本">￼</p>
+<h3 id="3-3-新建项目"><a href="#3-3-新建项目" class="headerlink" title="3.3 新建项目"></a>3.3 新建项目</h3><h4 id="1-命名规则"><a href="#1-命名规则" class="headerlink" title="1) 命名规则"></a>1) 命名规则</h4><ul>
+<li>以后 <strong>项目名</strong> 前面都以 <strong>数字编号</strong>， <strong>随着知识点递增，编号递增</strong><ul>
+<li>例如： <strong>01_Python 基础</strong>、 <strong>02_分支</strong>、 <strong>03_循环</strong>…</li>
+</ul>
+</li>
+<li><p>每个项目下的 <strong>文件名</strong> 都以 <code>hm_xx_知识点</code> 方式来命名</p>
+<ul>
+<li>其中 <strong>xx</strong> 是演练文件的序号</li>
+</ul>
+</li>
+<li><p>注意</p>
+<ul>
+<li>1. 命名文件名时建议只使用 <strong>小写字母</strong>、 <strong>数字</strong> 和 <strong>下划线</strong></li>
+<li><ol start="2">
+<li><strong>文件名不能以数字开始</strong></li>
+</ol>
+</li>
+</ul>
+</li>
+<li>通过 <strong>欢迎界面</strong> 或者菜单 <strong>File</strong> / <strong>New Project</strong> 可以新建项目</li>
+</ul>
+<h4 id="2-演练步骤"><a href="#2-演练步骤" class="headerlink" title="2) 演练步骤"></a>2) 演练步骤</h4><ul>
+<li>新建 <code>01_Python基础</code> 项目，使用 <strong>Python 3.x 解释器</strong></li>
+<li>在项目下新建 <code>hm_01_hello.py</code> Python 文件</li>
+<li>编写 <code>print(&quot;Hello Python&quot;)</code> 代码</li>
+</ul>
+<h2 id="04-设置-PyCharm-的字体显示"><a href="#04-设置-PyCharm-的字体显示" class="headerlink" title="04. 设置 PyCharm 的字体显示"></a>04. 设置 PyCharm 的字体显示</h2><p><img src="https://i.loli.net/2018/12/17/5c174e86bcd3e.jpg" alt="007_PyCharm设置编辑器字体">￼</p>
+<p><img src="https://i.loli.net/2018/12/17/5c174e8817cd4.jpg" alt="008_PyCharm设置控制台字体">￼</p>
+<h2 id="05-PyCharm-的升级以及其他"><a href="#05-PyCharm-的升级以及其他" class="headerlink" title="05. PyCharm 的升级以及其他"></a>05. PyCharm 的升级以及其他</h2><blockquote>
+<p>PyCharm 提供了对 <strong>学生和教师免费使用的版本</strong></p>
+</blockquote>
+<ul>
+<li>教育版下载地址：<a href="https://www.jetbrains.com/pycharm-edu/download/#section=linux" target="_blank" rel="noopener">https://www.jetbrains.com/pycharm-edu/download/#section=linux</a></li>
+<li>专业版下载地址：<a href="https://www.jetbrains.com/pycharm/download/#section=linux" target="_blank" rel="noopener">https://www.jetbrains.com/pycharm/download/#section=linux</a></li>
+</ul>
+<h3 id="5-1-安装和启动步骤"><a href="#5-1-安装和启动步骤" class="headerlink" title="5.1 安装和启动步骤"></a>5.1 安装和启动步骤</h3><ul>
+<li>1. 执行以下终端命令，解压缩下载后的安装包</li>
+</ul>
+<pre>    `$ tar -zxvf pycharm-professional-2017.1.3.tar.gz
+` 
+  </pre>
+
+<ul>
+<li>2. 将解压缩后的目录移动到 <code>/opt</code> 目录下，可以方便其他用户使用</li>
+</ul>
+<blockquote>
+<p><code>/opt</code> 目录用户存放给主机额外安装的软件</p>
+</blockquote>
+<pre>    `$ sudo mv pycharm-2017.1.3/ /opt/
+` 
+  </pre>
+
+<ul>
+<li>3. 切换工作目录</li>
+</ul>
+<pre>    `$ cd /opt/pycharm-2017.1.3/bin
+` 
+  </pre>
+
+<ul>
+<li>4. 启动 <code>PyCharm</code></li>
+</ul>
+<pre>    `$ ./pycharm.sh
+` 
+  </pre>
+
+<h3 id="5-2-设置专业版启动图标"><a href="#5-2-设置专业版启动图标" class="headerlink" title="5.2 设置专业版启动图标"></a>5.2 设置专业版启动图标</h3><ul>
+<li>在 <strong>专业版</strong>中，选择菜单 <strong>Tools</strong> / <strong>Create Desktop Entry…</strong> 可以设置任务栏启动图标<ul>
+<li>注意：设置图标时，需要勾选 <code>Create the entry for all users</code></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2018/12/17/5c174e8836276.jpg" alt="009_创建桌面图标">￼</p>
+<h3 id="5-3-卸载之前版本的-PyCharm"><a href="#5-3-卸载之前版本的-PyCharm" class="headerlink" title="5.3 卸载之前版本的 PyCharm"></a>5.3 卸载之前版本的 PyCharm</h3><h4 id="1-程序安装"><a href="#1-程序安装" class="headerlink" title="1) 程序安装"></a>1) 程序安装</h4><ul>
+<li><ol>
+<li><strong>程序文件目录</strong></li>
+</ol>
+<ul>
+<li>将安装包解压缩，并且移动到 <code>/opt</code> 目录下</li>
+<li><strong>所有的相关文件都保存在解压缩的目录中</strong></li>
+</ul>
+</li>
+<li><ol start="2">
+<li><strong>配置文件目录</strong></li>
+</ol>
+<ul>
+<li>启动 <code>PyCharm</code> 后，会在用户家目录下建立一个 <code>.PyCharmxxx</code> 的隐藏目录</li>
+<li><strong>保存 <code>PyCharm</code> 相关的配置信息</strong></li>
+</ul>
+</li>
+<li><ol start="3">
+<li><strong>快捷方式文件</strong></li>
+</ol>
+<ul>
+<li><code>/usr/share/applications/jetbrains-pycharm.desktop</code></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>在 <code>ubuntu</code> 中，应用程序启动的快捷方式通常都保存在 <code>/usr/share/applications</code> 目录下</p>
+</blockquote>
+<h4 id="2-程序卸载"><a href="#2-程序卸载" class="headerlink" title="2) 程序卸载"></a>2) 程序卸载</h4><ul>
+<li><p>要卸载 <code>PyCharm</code> 只需要做以下两步工作：</p>
+</li>
+<li><ol>
+<li>删除解压缩目录</li>
+</ol>
+</li>
+</ul>
+<pre>    `$ sudo rm -r /opt/pycharm-2016.3.1/
+` 
+  </pre>
+
+<ul>
+<li>2. 删除家目录下用于保存配置信息的隐藏目录</li>
+</ul>
+<pre>    `$ rm -r ~/.PyCharm2016.3/
+` 
+  </pre>
+
+<blockquote>
+<p>如果不再使用 PyCharm 还需要将 <code>/usr/share/applications/</code> 下的 <code>jetbrains-pycharm.desktop</code> 删掉</p>
+</blockquote>
+<h3 id="5-4-教育版安装演练"><a href="#5-4-教育版安装演练" class="headerlink" title="5.4 教育版安装演练"></a>5.4 教育版安装演练</h3><pre>    `# 1\. 解压缩下载后的安装包 $ tar -zxvf pycharm-edu-3.5.1.tar.gz # 2\. 将解压缩后的目录移动到 `/opt`
+      目录下，可以方便其他用户使用 $ sudo mv pycharm-edu-3.5.1/ /opt/ # 3\. 启动 `PyCharm` /opt/pycharm-edu-3.5.1/bin/pycharm.sh
+` 
+  </pre>
+
+<blockquote>
+<p>后续课程 <strong>都使用专业版本演练</strong></p>
+</blockquote>
+<h4 id="设置启动图标"><a href="#设置启动图标" class="headerlink" title="设置启动图标"></a>设置启动图标</h4><ul>
+<li>1. 编辑快捷方式文件</li>
+</ul>
+<pre>    `$ sudo gedit /usr/share/applications/jetbrains-pycharm.desktop
+` 
+  </pre>
+
+<ul>
+<li>3. 按照以下内容修改文件内容，需要注意 <strong>指定正确的 <code>pycharm</code> 目录</strong></li>
+</ul>
+<pre>    `[Desktop Entry] Version=1.0 Type=Application Name=PyCharm Icon=/opt/pycharm-edu-3.5.1/bin/pycharm.png
+      Exec="/opt/pycharm-edu-3.5.1/bin/pycharm.sh" %f Comment=The Drive to Develop
+      Categories=Development;IDE; Terminal=false StartupWMClass=jetbrains-pycharm
+` 
+  </pre>
+
+<p><a href="mailto:&#47;&#x73;&#111;&#x75;&#114;&#x64;&#x72;&#117;&#x6d;&#x73;&#64;&#103;&#x6d;&#x61;&#105;&#x6c;&#46;&#x63;&#x6f;&#109;" target="_blank" rel="noopener">&#47;&#x73;&#111;&#x75;&#114;&#x64;&#x72;&#117;&#x6d;&#x73;&#64;&#103;&#x6d;&#x61;&#105;&#x6c;&#46;&#x63;&#x6f;&#109;</a></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+               <div id="needsharebutton-postbottom">
+                 <span class="btn">
+                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                 </span>
+               </div>
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2018/12/17/02_第一个 Python 程序/" rel="next" title="02_第一个 Python 程序">
+                <i class="fa fa-chevron-left"></i> 02_第一个 Python 程序
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2018/12/17/04_多文件项目（知道）/" rel="prev" title="04_多文件项目（知道）">
+                04_多文件项目（知道） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/blog/images/avatar.gif" alt="鐺鐺鐺™">
+            
+              <p class="site-author-name" itemprop="name">鐺鐺鐺™</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/blog/archives/">
+                
+                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/blog/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/PAINCLOWN" title="GitHub &rarr; https://github.com/PAINCLOWN" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:pozz@vip.qq.com" title="E-Mail &rarr; mailto:pozz@vip.qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://twitter.com/Pa1ncl0wn" title="Twitter &rarr; https://twitter.com/Pa1ncl0wn" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PyCharm-的初始设置（知道）"><span class="nav-number">1.</span> <span class="nav-text">PyCharm 的初始设置（知道）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#目标"><span class="nav-number">1.1.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#01-恢复-PyCharm-的初始设置"><span class="nav-number">1.2.</span> <span class="nav-text">01. 恢复 PyCharm 的初始设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#02-第一次启动-PyCharm"><span class="nav-number">1.3.</span> <span class="nav-text">02. 第一次启动 PyCharm</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-导入配置信息"><span class="nav-number">1.3.1.</span> <span class="nav-text">2.1 导入配置信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-选择许可协议"><span class="nav-number">1.3.2.</span> <span class="nav-text">2.2 选择许可协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-PyCharm-的配置初始界面"><span class="nav-number">1.3.3.</span> <span class="nav-text">2.3 PyCharm 的配置初始界面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-欢迎界面"><span class="nav-number">1.3.4.</span> <span class="nav-text">2.4 欢迎界面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#03-新建-打开一个-Python-项目"><span class="nav-number">1.4.</span> <span class="nav-text">03. 新建/打开一个 Python 项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-项目简介"><span class="nav-number">1.4.1.</span> <span class="nav-text">3.1 项目简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-打开-Python-项目"><span class="nav-number">1.4.2.</span> <span class="nav-text">3.2 打开 Python 项目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置项目使用的解释器版本"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">设置项目使用的解释器版本</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-新建项目"><span class="nav-number">1.4.3.</span> <span class="nav-text">3.3 新建项目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-命名规则"><span class="nav-number">1.4.3.1.</span> <span class="nav-text">1) 命名规则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-演练步骤"><span class="nav-number">1.4.3.2.</span> <span class="nav-text">2) 演练步骤</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#04-设置-PyCharm-的字体显示"><span class="nav-number">1.5.</span> <span class="nav-text">04. 设置 PyCharm 的字体显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#05-PyCharm-的升级以及其他"><span class="nav-number">1.6.</span> <span class="nav-text">05. PyCharm 的升级以及其他</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-安装和启动步骤"><span class="nav-number">1.6.1.</span> <span class="nav-text">5.1 安装和启动步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-设置专业版启动图标"><span class="nav-number">1.6.2.</span> <span class="nav-text">5.2 设置专业版启动图标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-卸载之前版本的-PyCharm"><span class="nav-number">1.6.3.</span> <span class="nav-text">5.3 卸载之前版本的 PyCharm</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-程序安装"><span class="nav-number">1.6.3.1.</span> <span class="nav-text">1) 程序安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-程序卸载"><span class="nav-number">1.6.3.2.</span> <span class="nav-text">2) 程序卸载</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-教育版安装演练"><span class="nav-number">1.6.4.</span> <span class="nav-text">5.4 教育版安装演练</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置启动图标"><span class="nav-number">1.6.4.1.</span> <span class="nav-text">设置启动图标</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+<div>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="//music.163.com/outchain/player?type=2&id=1317145091&auto=0&height=32"></iframe>
+</div>
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">鐺鐺鐺™</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+<i class="fa fa-user-md"> | </i><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1275152149'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1275152149%26online%3D2' type='text/javascript'%3E%3C/script%3E"));</script>
+
+        
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1275152149&web_id=1275152149" language="JavaScript"></script>
+  </div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+      
+  
+  <script color="243,59,31" opacity="0.9" zindex="-1" count="80" src="/blog/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script src="/blog/js/src/utils.js?v=6.6.0"></script>
+
+  <script src="/blog/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/blog/js/src/affix.js?v=6.6.0"></script>
+
+  <script src="/blog/js/src/schemes/pisces.js?v=6.6.0"></script>
+
+
+
+  
+  <script src="/blog/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/blog/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script src="/blog/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+  <script>
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'MMrWPDbRIVDuiQKQbKYfYG54-gzGzoHsz',
+        appKey: 'yd55FCcOxDFUTQSvcKFO11Wg',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: false
+    });
+  </script>
+
+
+
+
+  
+
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/blog/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/blog/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<script src="/blog/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/blog/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":75,"height":150},"mobile":{"show":true},"log":false});</script></body>
+</html>
+<script type="text/javascript">var a_idx = 0;jQuery(document).ready(function($) {    $("body").click(function(e) {        var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正" ,"法治", "爱国", "敬业", "诚信", "友善");        var $i = $("<span />").text(a[a_idx]);        a_idx = (a_idx + 1) % a.length;        var x = e.pageX,        y = e.pageY;        $i.css({            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,            "top": y - 20,            "left": x,            "position": "absolute",            "font-weight": "bold",            "color": "#ff6651"        });        $("body").append($i);        $i.animate({            "top": y - 180,            "opacity": 0        },        1500,        function() {            $i.remove();        });    });});</script>

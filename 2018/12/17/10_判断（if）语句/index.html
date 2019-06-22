@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+  <link rel="stylesheet" href="/blog/lib/needsharebutton/needsharebutton.css">
+
+
+
+
+  
+  
+    
+    
+  <script src="/blog/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/blog/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/blog/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Gemini',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="判断（if）语句目标 开发中的应用场景 if 语句体验 if 语句进阶 综合应用  01. 开发中的应用场景生活中的判断几乎是无所不在的，我们每天都在做各种各样的选择，如果这样？如果那样？…… ￼ ￼ 程序中的判断￼     `if 今天发工资: 先还信用卡的钱 if 有剩余: 又可以happy了，O(∩_∩)O哈哈~ else: 噢，no。。。还的等30天 else: 盼着发工资 `">
+<meta property="og:type" content="article">
+<meta property="og:title" content="10_判断（if）语句">
+<meta property="og:url" content="https://PAINCLOWN.github.io/blog/2018/12/17/10_判断（if）语句/index.html">
+<meta property="og:site_name" content="PA1NCL0WN^s BLOG">
+<meta property="og:description" content="判断（if）语句目标 开发中的应用场景 if 语句体验 if 语句进阶 综合应用  01. 开发中的应用场景生活中的判断几乎是无所不在的，我们每天都在做各种各样的选择，如果这样？如果那样？…… ￼ ￼ 程序中的判断￼     `if 今天发工资: 先还信用卡的钱 if 有剩余: 又可以happy了，O(∩_∩)O哈哈~ else: 噢，no。。。还的等30天 else: 盼着发工资 `">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.loli.net/2018/12/17/5c175098cb4e1.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/12/17/5c1750a2e1cad.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/12/17/5c1750a3092f4.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/12/17/5c1750a32c7f0.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/12/17/5c1750a34ee9a.jpg">
+<meta property="og:image" content="https://painclown.github.io/blog/2018/12/17/10_判断（if）语句/media/14963192801181/002_%E7%81%AB%E8%BD%A6%E7%AB%99%E5%AE%89%E6%A3%80.png">
+<meta property="og:updated_time" content="2019-06-22T03:31:27.625Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="10_判断（if）语句">
+<meta name="twitter:description" content="判断（if）语句目标 开发中的应用场景 if 语句体验 if 语句进阶 综合应用  01. 开发中的应用场景生活中的判断几乎是无所不在的，我们每天都在做各种各样的选择，如果这样？如果那样？…… ￼ ￼ 程序中的判断￼     `if 今天发工资: 先还信用卡的钱 if 有剩余: 又可以happy了，O(∩_∩)O哈哈~ else: 噢，no。。。还的等30天 else: 盼着发工资 `">
+<meta name="twitter:image" content="https://i.loli.net/2018/12/17/5c175098cb4e1.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="https://PAINCLOWN.github.io/blog/2018/12/17/10_判断（if）语句/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>10_判断（if）语句 | PA1NCL0WN^s BLOG</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion .logo-line-before i { left: initial; }
+    .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">PA1NCL0WN^s BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>时光机</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-code">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="http://PAINCLOWN.github.io/code" rel="section"><i class="menu-item-icon fa fa-fw fa-file-code-o"></i> <br>CODE</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-mainhome">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="http://PAINCLOWN.github.io" rel="section"><i class="menu-item-icon fa fa-fw fa-flag"></i> <br>主站</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://PAINCLOWN.github.io/blog/blog/2018/12/17/10_判断（if）语句/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="鐺鐺鐺™">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="PA1NCL0WN^s BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">10_判断（if）语句
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span title="post.wordcount">
+            共2.5k 字 | 
+          </span>
+
+          <span title="post.min2read">
+          阅读时间约9 分钟 | 
+          </span>
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-17 15:52:17" itemprop="dateCreated datePublished" datetime="2018-12-17T15:52:17+08:00">2018-12-17</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-22 11:31:27" itemprop="dateModified" datetime="2019-06-22T11:31:27+08:00">2019-06-22</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/blog/categories/python教程/" itemprop="url" rel="index"><span itemprop="name">python教程</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/2018/12/17/10_判断（if）语句/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/blog/2018/12/17/10_判断（if）语句/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="判断（if）语句"><a href="#判断（if）语句" class="headerlink" title="判断（if）语句"></a>判断（if）语句</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>开发中的应用场景</li>
+<li>if 语句体验</li>
+<li>if 语句进阶</li>
+<li>综合应用</li>
+</ul>
+<h2 id="01-开发中的应用场景"><a href="#01-开发中的应用场景" class="headerlink" title="01. 开发中的应用场景"></a>01. 开发中的应用场景</h2><p>生活中的判断几乎是无所不在的，我们每天都在做各种各样的选择，如果这样？如果那样？……</p>
+<p><img src="https://i.loli.net/2018/12/17/5c175098cb4e1.jpg" alt="001_未成年人禁止入内">￼</p>
+<p><img src="https://i.loli.net/2018/12/17/5c1750a2e1cad.jpg" alt="002_火车站安检">￼</p>
+<h3 id="程序中的判断"><a href="#程序中的判断" class="headerlink" title="程序中的判断"></a>程序中的判断</h3><p><img src="https://i.loli.net/2018/12/17/5c1750a3092f4.jpg" alt="003_判断示意图">￼</p>
+<pre>    `if 今天发工资: 先还信用卡的钱 if 有剩余: 又可以happy了，O(∩_∩)O哈哈~ else: 噢，no。。。还的等30天 else: 盼着发工资
+` 
+  </pre>
+
+<h3 id="判断的定义"><a href="#判断的定义" class="headerlink" title="判断的定义"></a>判断的定义</h3><ul>
+<li>如果 <strong>条件满足</strong>，才能做某件事情，</li>
+<li>如果 <strong>条件不满足</strong>，就做另外一件事情，或者什么也不做</li>
+</ul>
+<blockquote>
+<p>正是因为有了判断，才使得程序世界丰富多彩，充满变化！</p>
+<p><strong>判断语句</strong> 又被称为 “分支语句”，正是因为有了判断，才让程序有了很多的分支</p>
+</blockquote>
+<h2 id="02-if-语句体验"><a href="#02-if-语句体验" class="headerlink" title="02. if 语句体验"></a>02. if 语句体验</h2><h3 id="2-1-if-判断语句基本语法"><a href="#2-1-if-判断语句基本语法" class="headerlink" title="2.1 if 判断语句基本语法"></a>2.1 if 判断语句基本语法</h3><p>在 <code>Python</code> 中， <strong>if 语句</strong> 就是用来进行判断的，格式如下：</p>
+<pre>    `if 要判断的条件: 条件成立时，要做的事情 ……
+` 
+  </pre>
+
+<blockquote>
+<p>注意：代码的缩进为一个 <code>tab</code> 键，或者 <strong>4</strong> 个空格 —— <strong>建议使用空格</strong></p>
+<ul>
+<li>在 Python 开发中，Tab 和空格不要混用！</li>
+</ul>
+</blockquote>
+<p><strong>我们可以把整个 if 语句看成一个完整的代码块</strong></p>
+<p><img src="https://i.loli.net/2018/12/17/5c1750a32c7f0.jpg" alt="004_if语句是一个完整的代码块1">￼</p>
+<h3 id="2-2-判断语句演练-——-判断年龄"><a href="#2-2-判断语句演练-——-判断年龄" class="headerlink" title="2.2 判断语句演练 —— 判断年龄"></a>2.2 判断语句演练 —— 判断年龄</h3><p><strong>需求</strong></p>
+<ol>
+<li>定义一个整数变量记录年龄</li>
+<li>判断是否满 18 岁 （ <strong>&gt;=</strong>）</li>
+<li>如果满 18 岁，允许进网吧嗨皮</li>
+</ol>
+<pre>    `# 1\. 定义年龄变量 age = 18 # 2\. 判断是否满 18 岁 # if 语句以及缩进部分的代码是一个完整的代码块 if age >=
+      18: print("可以进网吧嗨皮……") # 3\. 思考！- 无论条件是否满足都会执行 print("这句代码什么时候执行?")
+` 
+  </pre>
+
+<p><strong>注意</strong>：</p>
+<ul>
+<li><code>if</code> 语句以及缩进部分是一个 <strong>完整的代码块</strong></li>
+</ul>
+<h3 id="2-3-else-处理条件不满足的情况"><a href="#2-3-else-处理条件不满足的情况" class="headerlink" title="2.3 else 处理条件不满足的情况"></a>2.3 else 处理条件不满足的情况</h3><p><strong>思考</strong></p>
+<p>在使用 <code>if</code> 判断时，只能做到满足条件时要做的事情。那如果需要在 <strong>不满足条件的时候</strong>，做某些事情，该如何做呢？</p>
+<p><strong>答案</strong></p>
+<p><code>else</code>，格式如下：</p>
+<pre>    `if 要判断的条件: 条件成立时，要做的事情 …… else: 条件不成立时，要做的事情 ……
+` 
+  </pre>
+
+<p><strong>注意</strong>：</p>
+<ul>
+<li><code>if</code> 和 <code>else</code> 语句以及各自的缩进部分共同是一个 <strong>完整的代码块</strong></li>
+</ul>
+<h3 id="2-4-判断语句演练-——-判断年龄改进"><a href="#2-4-判断语句演练-——-判断年龄改进" class="headerlink" title="2.4 判断语句演练 —— 判断年龄改进"></a>2.4 判断语句演练 —— 判断年龄改进</h3><p><strong>需求</strong></p>
+<ol>
+<li>输入用户年龄</li>
+<li>判断是否满 18 岁 （ <strong>&gt;=</strong>）</li>
+<li>如果满 18 岁，允许进网吧嗨皮</li>
+<li>如果未满 18 岁，提示回家写作业</li>
+</ol>
+<pre>    `# 1\. 输入用户年龄 age = int(input("今年多大了？")) # 2\. 判断是否满 18 岁 # if 语句以及缩进部分的代码是一个完整的语法块
+      if age >= 18: print("可以进网吧嗨皮……") else: print("你还没长大，应该回家写作业！") # 3\. 思考！-
+      无论条件是否满足都会执行 print("这句代码什么时候执行?")
+` 
+  </pre>
+
+<p><img src="https://i.loli.net/2018/12/17/5c1750a34ee9a.jpg" alt="005_ifelse语句是一个完整的代码块1">￼</p>
+<h2 id="03-逻辑运算"><a href="#03-逻辑运算" class="headerlink" title="03. 逻辑运算"></a>03. 逻辑运算</h2><ul>
+<li>在程序开发中，通常 <strong>在判断条件时</strong>，会需要同时判断多个条件</li>
+<li>只有多个条件都满足，才能够执行后续代码，这个时候需要使用到 <strong>逻辑运算符</strong></li>
+<li><strong>逻辑运算符</strong> 可以把 <strong>多个条件</strong> 按照 <strong>逻辑</strong> 进行 <strong>连接</strong>，变成 <strong>更复杂的条件</strong></li>
+<li>Python 中的 <strong>逻辑运算符</strong> 包括： <strong>与 and</strong>／ <strong>或 or</strong>／ <strong>非 not</strong> 三种</li>
+</ul>
+<h3 id="3-1-and"><a href="#3-1-and" class="headerlink" title="3.1 and"></a>3.1 <code>and</code></h3><pre>    `条件1 and 条件2
+` 
+  </pre>
+
+<ul>
+<li><strong>与</strong>／ <strong>并且</strong></li>
+<li>两个条件同时满足，返回 <code>True</code></li>
+<li>只要有一个不满足，就返回 <code>False</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>条件 1</th>
+<th>条件 2</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>成立</td>
+<td>成立</td>
+<td>成立</td>
+</tr>
+<tr>
+<td>成立</td>
+<td>不成立</td>
+<td>不成立</td>
+</tr>
+<tr>
+<td>不成立</td>
+<td>成立</td>
+<td>不成立</td>
+</tr>
+<tr>
+<td>不成立</td>
+<td>不成立</td>
+<td>不成立</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-2-or"><a href="#3-2-or" class="headerlink" title="3.2 or"></a>3.2 <code>or</code></h3><pre>    `条件1 or 条件2
+` 
+  </pre>
+
+<ul>
+<li><strong>或</strong>／ <strong>或者</strong></li>
+<li>两个条件只要有一个满足，返回 <code>True</code></li>
+<li>两个条件都不满足，返回 <code>False</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>条件 1</th>
+<th>条件 2</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>成立</td>
+<td>成立</td>
+<td>成立</td>
+</tr>
+<tr>
+<td>成立</td>
+<td>不成立</td>
+<td>成立</td>
+</tr>
+<tr>
+<td>不成立</td>
+<td>成立</td>
+<td>成立</td>
+</tr>
+<tr>
+<td>不成立</td>
+<td>不成立</td>
+<td>不成立</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-3-not"><a href="#3-3-not" class="headerlink" title="3.3 not"></a>3.3 <code>not</code></h3><pre>    `not 条件
+` 
+  </pre>
+
+<ul>
+<li><strong>非</strong>／ <strong>不是</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>条件</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>成立</td>
+<td>不成立</td>
+</tr>
+<tr>
+<td>不成立</td>
+<td>成立</td>
+</tr>
+</tbody>
+</table>
+<h4 id="逻辑运算演练"><a href="#逻辑运算演练" class="headerlink" title="逻辑运算演练"></a>逻辑运算演练</h4><ol>
+<li>练习1: 定义一个整数变量 <code>age</code>，编写代码判断年龄是否正确<ul>
+<li>要求人的年龄在 0-120 之间</li>
+</ul>
+</li>
+<li>练习2: 定义两个整数变量 <code>python_score</code>、 <code>c_score</code>，编写代码判断成绩<ul>
+<li>要求只要有一门成绩 &gt; 60 分就算合格</li>
+</ul>
+</li>
+<li>练习3: 定义一个布尔型变量 <code>is_employee</code>，编写代码判断是否是本公司员工<ul>
+<li>如果不是提示不允许入内</li>
+</ul>
+</li>
+</ol>
+<p>答案 1：</p>
+<pre>    `# 练习1: 定义一个整数变量 age，编写代码判断年龄是否正确 age = 100 # 要求人的年龄在 0-120 之间 if age >=
+      0 and age <= 120:="" print("年龄正确")="" else:="" print("年龄不正确")="" `="" <="" pre="">
+
+<p>答案 2：</p>
+<pre>    `# 练习2: 定义两个整数变量 python_score、c_score，编写代码判断成绩 python_score = 50 c_score = 50
+      # 要求只要有一门成绩 > 60 分就算合格 if python_score > 60 or c_score > 60: print("考试通过")
+      else: print("再接再厉！")
+` 
+  </pre>
+
+<p>答案 3：</p>
+<pre>    `# 练习3: 定义一个布尔型变量 `is_employee`，编写代码判断是否是本公司员工 is_employee = True # 如果不是提示不允许入内
+      if not is_employee: print("非公勿内")
+` 
+  </pre>
+
+<h2 id="04-if-语句进阶"><a href="#04-if-语句进阶" class="headerlink" title="04. if 语句进阶"></a>04. if 语句进阶</h2><h3 id="4-1-elif"><a href="#4-1-elif" class="headerlink" title="4.1 elif"></a>4.1 <code>elif</code></h3><ul>
+<li>在开发中，使用 <code>if</code> 可以 <strong>判断条件</strong></li>
+<li>使用 <code>else</code> 可以处理 <strong>条件不成立</strong> 的情况</li>
+<li>但是，如果希望 <strong>再增加一些条件</strong>， <strong>条件不同，需要执行的代码也不同</strong> 时，就可以使用 <code>elif</code></li>
+<li>语法格式如下：</li>
+</ul>
+<pre>    `if 条件1: 条件1满足执行的代码 …… elif 条件2: 条件2满足时，执行的代码 …… elif 条件3: 条件3满足时，执行的代码 …… else:
+      以上条件都不满足时，执行的代码 ……
+` 
+  </pre>
+
+<ul>
+<li>对比逻辑运算符的代码</li>
+</ul>
+<pre>    `if 条件1 and 条件2: 条件1满足 并且 条件2满足 执行的代码 ……
+` 
+  </pre>
+
+<p><strong>注意</strong></p>
+<ol>
+<li><code>elif</code> 和 <code>else</code> 都必须和 <code>if</code> 联合使用，而不能单独使用</li>
+<li>可以将 <code>if</code>、 <code>elif</code> 和 <code>else</code> 以及各自缩进的代码，看成一个 <strong>完整的代码块</strong></li>
+</ol>
+<h4 id="elif-演练-——-女友的节日"><a href="#elif-演练-——-女友的节日" class="headerlink" title="elif 演练 —— 女友的节日"></a>elif 演练 —— 女友的节日</h4><p><strong>需求</strong></p>
+<ol>
+<li>定义 <code>holiday_name</code> 字符串变量记录节日名称</li>
+<li>如果是 <strong>情人节</strong> 应该 <strong>买玫瑰</strong>／ <strong>看电影</strong></li>
+<li>如果是 <strong>平安夜</strong> 应该 <strong>买苹果</strong>／ <strong>吃大餐</strong></li>
+<li>如果是 <strong>生日</strong> 应该 <strong>买蛋糕</strong></li>
+<li>其他的日子每天都是节日啊……</li>
+</ol>
+<pre>    `holiday_name = "平安夜" if holiday_name == "情人节": print("买玫瑰") print("看电影") elif
+      holiday_name == "平安夜": print("买苹果") print("吃大餐") elif holiday_name == "生日":
+      print("买蛋糕") else: print("每天都是节日啊……")
+
+` 
+  </pre>
+
+<h3 id="4-2-if-的嵌套"><a href="#4-2-if-的嵌套" class="headerlink" title="4.2 if 的嵌套"></a>4.2 <code>if</code> 的嵌套</h3><p><img src="/blog/2018/12/17/10_判断（if）语句/media/14963192801181/002_%E7%81%AB%E8%BD%A6%E7%AB%99%E5%AE%89%E6%A3%80.png" alt="002_火车站安检">￼</p>
+<blockquote>
+<p><strong>elif</strong> 的应用场景是： <strong>同时</strong> 判断 <strong>多个条件</strong>，所有的条件是 <strong>平级</strong> 的</p>
+</blockquote>
+<ul>
+<li>在开发中，使用 <code>if</code> 进行条件判断，如果希望 <strong>在条件成立的执行语句中</strong> 再 <strong>增加条件判断</strong>，就可以使用 <strong>if 的嵌套</strong></li>
+<li><strong>if 的嵌套</strong> 的应用场景就是： <strong>在之前条件满足的前提下，再增加额外的判断</strong></li>
+<li><strong>if 的嵌套</strong> 的语法格式， <strong>除了缩进之外</strong> 和之前的没有区别</li>
+<li>语法格式如下：</li>
+</ul>
+<pre>    `if 条件 1: 条件 1 满足执行的代码 …… if 条件 1 基础上的条件 2: 条件 2 满足时，执行的代码 …… # 条件 2 不满足的处理
+      else: 条件 2 不满足时，执行的代码 # 条件 1 不满足的处理 else: 条件1 不满足时，执行的代码 ……
+` 
+  </pre>
+
+<h4 id="if-的嵌套-演练-——-火车站安检"><a href="#if-的嵌套-演练-——-火车站安检" class="headerlink" title="if 的嵌套 演练 —— 火车站安检"></a>if 的嵌套 演练 —— 火车站安检</h4><p><strong>需求</strong></p>
+<ol>
+<li>定义布尔型变量 <code>has_ticket</code> 表示是否有车票</li>
+<li>定义整型变量 <code>knife_length</code> 表示刀的长度，单位：厘米</li>
+<li>首先检查是否有车票，如果有，才允许进行 <strong>安检</strong></li>
+<li>安检时，需要检查刀的长度，判断是否超过 20 厘米<ul>
+<li>如果超过 20 厘米，提示刀的长度，不允许上车</li>
+<li>如果不超过 20 厘米，安检通过</li>
+</ul>
+</li>
+<li>如果没有车票，不允许进门</li>
+</ol>
+<pre>    `# 定义布尔型变量 has_ticket 表示是否有车票 has_ticket = True # 定义整数型变量 knife_length 表示刀的长度，单位：厘米
+      knife_length = 20 # 首先检查是否有车票，如果有，才允许进行 安检 if has_ticket: print("有车票，可以开始安检...")
+      # 安检时，需要检查刀的长度，判断是否超过 20 厘米 # 如果超过 20 厘米，提示刀的长度，不允许上车 if knife_length >=
+      20: print("不允许携带 %d 厘米长的刀上车" % knife_length) # 如果不超过 20 厘米，安检通过 else: print("安检通过，祝您旅途愉快……")
+      # 如果没有车票，不允许进门 else: print("大哥，您要先买票啊")
+
+` 
+  </pre>
+
+<h2 id="05-综合应用-——-石头剪刀布"><a href="#05-综合应用-——-石头剪刀布" class="headerlink" title="05. 综合应用 —— 石头剪刀布"></a>05. 综合应用 —— 石头剪刀布</h2><p><strong>目标</strong></p>
+<ol>
+<li>强化 <strong>多个条件</strong> 的 <strong>逻辑运算</strong></li>
+<li>体会 <code>import</code> 导入模块（“工具包”）的使用</li>
+</ol>
+<p><strong>需求</strong></p>
+<ol>
+<li>从控制台输入要出的拳 —— 石头（1）／剪刀（2）／布（3）</li>
+<li>电脑 <strong>随机</strong> 出拳 —— 先假定电脑只会出石头，完成整体代码功能</li>
+<li>比较胜负</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>规则</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>石头 胜 剪刀</td>
+</tr>
+<tr>
+<td>2</td>
+<td>剪刀 胜 布</td>
+</tr>
+<tr>
+<td>3</td>
+<td>布 胜 石头</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-1-基础代码实现"><a href="#5-1-基础代码实现" class="headerlink" title="5.1 基础代码实现"></a>5.1 基础代码实现</h3><ul>
+<li>先 <strong>假定电脑就只会出石头</strong>，完成整体代码功能</li>
+</ul>
+<pre>    `# 从控制台输入要出的拳 —— 石头（1）／剪刀（2）／布（3） player = int(input("请出拳 石头（1）／剪刀（2）／布（3）："))
+      # 电脑 随机 出拳 - 假定电脑永远出石头 computer = 1 # 比较胜负 # 如果条件判断的内容太长，可以在最外侧的条件增加一对大括号
+      # 再在每一个条件之间，使用回车，PyCharm 可以自动增加 8 个空格 if ((player == 1 and computer == 2)
+      or (player == 2 and computer == 3) or (player == 3 and computer == 1)): print("噢耶！！！电脑弱爆了！！！")
+      elif player == computer: print("心有灵犀，再来一盘！") else: print("不行，我要和你决战到天亮！")
+
+` 
+  </pre>
+
+<h3 id="5-2-随机数的处理"><a href="#5-2-随机数的处理" class="headerlink" title="5.2 随机数的处理"></a>5.2 随机数的处理</h3><ul>
+<li>在 <code>Python</code> 中，要使用随机数，首先需要导入 <strong>随机数</strong> 的 <strong>模块</strong> —— “工具包”</li>
+</ul>
+<pre>    `import random
+` 
+  </pre>
+
+<ul>
+<li><p>导入模块后，可以直接在 <strong>模块名称</strong> 后面敲一个 <code>.</code> 然后按 <code>Tab</code> 键，会提示该模块中包含的所有函数</p>
+</li>
+<li><p><code>random.randint(a, b)</code> ，返回 <code>[a, b]</code> 之间的整数，包含 <code>a</code> 和 <code>b</code></p>
+</li>
+<li><p>例如：</p>
+</li>
+</ul>
+<pre>    `random.randint(12, 20) # 生成的随机数n: 12 <= 20="" n="" <="20" random.randint(20,="" 20)="" #="" 结果永远是="" 10)="" 该语句是错误的，下限必须小于上限="" `="" pre="">
+
+<p><a href="mailto:&#x2f;&#115;&#111;&#x75;&#114;&#100;&#114;&#x75;&#x6d;&#115;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#111;&#x6d;" target="_blank" rel="noopener">&#x2f;&#115;&#111;&#x75;&#114;&#100;&#114;&#x75;&#x6d;&#115;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#111;&#x6d;</a></p>
+</=></pre></=></pre>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+               <div id="needsharebutton-postbottom">
+                 <span class="btn">
+                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                 </span>
+               </div>
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2018/12/17/09_变量的命名/" rel="next" title="09_变量的命名">
+                <i class="fa fa-chevron-left"></i> 09_变量的命名
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2018/12/17/11_运算符/" rel="prev" title="11_运算符">
+                11_运算符 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/blog/images/avatar.gif" alt="鐺鐺鐺™">
+            
+              <p class="site-author-name" itemprop="name">鐺鐺鐺™</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/blog/archives/">
+                
+                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/blog/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/PAINCLOWN" title="GitHub &rarr; https://github.com/PAINCLOWN" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:pozz@vip.qq.com" title="E-Mail &rarr; mailto:pozz@vip.qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://twitter.com/Pa1ncl0wn" title="Twitter &rarr; https://twitter.com/Pa1ncl0wn" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#判断（if）语句"><span class="nav-number">1.</span> <span class="nav-text">判断（if）语句</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#目标"><span class="nav-number">1.1.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#01-开发中的应用场景"><span class="nav-number">1.2.</span> <span class="nav-text">01. 开发中的应用场景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#程序中的判断"><span class="nav-number">1.2.1.</span> <span class="nav-text">程序中的判断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断的定义"><span class="nav-number">1.2.2.</span> <span class="nav-text">判断的定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#02-if-语句体验"><span class="nav-number">1.3.</span> <span class="nav-text">02. if 语句体验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-if-判断语句基本语法"><span class="nav-number">1.3.1.</span> <span class="nav-text">2.1 if 判断语句基本语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-判断语句演练-——-判断年龄"><span class="nav-number">1.3.2.</span> <span class="nav-text">2.2 判断语句演练 —— 判断年龄</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-else-处理条件不满足的情况"><span class="nav-number">1.3.3.</span> <span class="nav-text">2.3 else 处理条件不满足的情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-判断语句演练-——-判断年龄改进"><span class="nav-number">1.3.4.</span> <span class="nav-text">2.4 判断语句演练 —— 判断年龄改进</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#03-逻辑运算"><span class="nav-number">1.4.</span> <span class="nav-text">03. 逻辑运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-and"><span class="nav-number">1.4.1.</span> <span class="nav-text">3.1 and</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-or"><span class="nav-number">1.4.2.</span> <span class="nav-text">3.2 or</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-not"><span class="nav-number">1.4.3.</span> <span class="nav-text">3.3 not</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#逻辑运算演练"><span class="nav-number">1.4.3.1.</span> <span class="nav-text">逻辑运算演练</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#04-if-语句进阶"><span class="nav-number">1.5.</span> <span class="nav-text">04. if 语句进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-elif"><span class="nav-number">1.5.1.</span> <span class="nav-text">4.1 elif</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#elif-演练-——-女友的节日"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">elif 演练 —— 女友的节日</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-if-的嵌套"><span class="nav-number">1.5.2.</span> <span class="nav-text">4.2 if 的嵌套</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#if-的嵌套-演练-——-火车站安检"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">if 的嵌套 演练 —— 火车站安检</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#05-综合应用-——-石头剪刀布"><span class="nav-number">1.6.</span> <span class="nav-text">05. 综合应用 —— 石头剪刀布</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-基础代码实现"><span class="nav-number">1.6.1.</span> <span class="nav-text">5.1 基础代码实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-随机数的处理"><span class="nav-number">1.6.2.</span> <span class="nav-text">5.2 随机数的处理</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+<div>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="//music.163.com/outchain/player?type=2&id=1317145091&auto=0&height=32"></iframe>
+</div>
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">鐺鐺鐺™</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+<i class="fa fa-user-md"> | </i><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1275152149'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1275152149%26online%3D2' type='text/javascript'%3E%3C/script%3E"));</script>
+
+        
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1275152149&web_id=1275152149" language="JavaScript"></script>
+  </div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+      
+  
+  <script color="243,59,31" opacity="0.9" zindex="-1" count="80" src="/blog/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script src="/blog/js/src/utils.js?v=6.6.0"></script>
+
+  <script src="/blog/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/blog/js/src/affix.js?v=6.6.0"></script>
+
+  <script src="/blog/js/src/schemes/pisces.js?v=6.6.0"></script>
+
+
+
+  
+  <script src="/blog/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/blog/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script src="/blog/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+  <script>
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'MMrWPDbRIVDuiQKQbKYfYG54-gzGzoHsz',
+        appKey: 'yd55FCcOxDFUTQSvcKFO11Wg',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: false
+    });
+  </script>
+
+
+
+
+  
+
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/blog/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/blog/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<script src="/blog/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/blog/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":75,"height":150},"mobile":{"show":true},"log":false});</script></body>
+</html>
+<script type="text/javascript">var a_idx = 0;jQuery(document).ready(function($) {    $("body").click(function(e) {        var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正" ,"法治", "爱国", "敬业", "诚信", "友善");        var $i = $("<span />").text(a[a_idx]);        a_idx = (a_idx + 1) % a.length;        var x = e.pageX,        y = e.pageY;        $i.css({            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,            "top": y - 20,            "left": x,            "position": "absolute",            "font-weight": "bold",            "color": "#ff6651"        });        $("body").append($i);        $i.animate({            "top": y - 180,            "opacity": 0        },        1500,        function() {            $i.remove();        });    });});</script>

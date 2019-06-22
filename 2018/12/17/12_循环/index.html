@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+  <link rel="stylesheet" href="/blog/lib/needsharebutton/needsharebutton.css">
+
+
+
+
+  
+  
+    
+    
+  <script src="/blog/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/blog/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/blog/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Gemini',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="循环目标 程序的三大流程 while 循环基本使用 break 和 continue while 循环嵌套  01. 程序的三大流程 在程序开发中，一共有三种流程方式：  顺序 —— 从上向下，顺序执行代码 分支 —— 根据条件判断，决定执行代码的 分支 循环 —— 让 特定代码 重复 执行  ￼   02. while 循环基本使用 循环的作用就是让 指定的代码 重复的执行 while 循环最常">
+<meta property="og:type" content="article">
+<meta property="og:title" content="12_循环">
+<meta property="og:url" content="https://PAINCLOWN.github.io/blog/2018/12/17/12_循环/index.html">
+<meta property="og:site_name" content="PA1NCL0WN^s BLOG">
+<meta property="og:description" content="循环目标 程序的三大流程 while 循环基本使用 break 和 continue while 循环嵌套  01. 程序的三大流程 在程序开发中，一共有三种流程方式：  顺序 —— 从上向下，顺序执行代码 分支 —— 根据条件判断，决定执行代码的 分支 循环 —— 让 特定代码 重复 执行  ￼   02. while 循环基本使用 循环的作用就是让 指定的代码 重复的执行 while 循环最常">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.loli.net/2018/12/17/5c17510ec5306.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/12/17/5c17510ed1c4b.jpg">
+<meta property="og:updated_time" content="2019-06-22T03:31:27.626Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="12_循环">
+<meta name="twitter:description" content="循环目标 程序的三大流程 while 循环基本使用 break 和 continue while 循环嵌套  01. 程序的三大流程 在程序开发中，一共有三种流程方式：  顺序 —— 从上向下，顺序执行代码 分支 —— 根据条件判断，决定执行代码的 分支 循环 —— 让 特定代码 重复 执行  ￼   02. while 循环基本使用 循环的作用就是让 指定的代码 重复的执行 while 循环最常">
+<meta name="twitter:image" content="https://i.loli.net/2018/12/17/5c17510ec5306.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="https://PAINCLOWN.github.io/blog/2018/12/17/12_循环/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>12_循环 | PA1NCL0WN^s BLOG</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion .logo-line-before i { left: initial; }
+    .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">PA1NCL0WN^s BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>时光机</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-code">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="http://PAINCLOWN.github.io/code" rel="section"><i class="menu-item-icon fa fa-fw fa-file-code-o"></i> <br>CODE</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-mainhome">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="http://PAINCLOWN.github.io" rel="section"><i class="menu-item-icon fa fa-fw fa-flag"></i> <br>主站</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://PAINCLOWN.github.io/blog/blog/2018/12/17/12_循环/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="鐺鐺鐺™">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="PA1NCL0WN^s BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">12_循环
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span title="post.wordcount">
+            共304 字 | 
+          </span>
+
+          <span title="post.min2read">
+          阅读时间约1 分钟 | 
+          </span>
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-17 15:54:17" itemprop="dateCreated datePublished" datetime="2018-12-17T15:54:17+08:00">2018-12-17</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-22 11:31:27" itemprop="dateModified" datetime="2019-06-22T11:31:27+08:00">2019-06-22</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/blog/categories/python教程/" itemprop="url" rel="index"><span itemprop="name">python教程</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/2018/12/17/12_循环/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/blog/2018/12/17/12_循环/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>程序的三大流程</li>
+<li>while 循环基本使用</li>
+<li>break 和 continue</li>
+<li>while 循环嵌套</li>
+</ul>
+<h2 id="01-程序的三大流程"><a href="#01-程序的三大流程" class="headerlink" title="01. 程序的三大流程"></a>01. 程序的三大流程</h2><ul>
+<li><p>在程序开发中，一共有三种流程方式：</p>
+<ul>
+<li><strong>顺序</strong> —— <strong>从上向下</strong>，顺序执行代码</li>
+<li><strong>分支</strong> —— 根据条件判断，决定执行代码的 <strong>分支</strong></li>
+<li><strong>循环</strong> —— 让 <strong>特定代码 重复</strong> 执行</li>
+</ul>
+<p><img src="https://i.loli.net/2018/12/17/5c17510ec5306.jpg" alt="001_程序三大流程">￼</p>
+</li>
+</ul>
+<h2 id="02-while-循环基本使用"><a href="#02-while-循环基本使用" class="headerlink" title="02. while 循环基本使用"></a>02. <code>while</code> 循环基本使用</h2><ul>
+<li>循环的作用就是让 <strong>指定的代码</strong> 重复的执行</li>
+<li><p><code>while</code> 循环最常用的应用场景就是 <strong>让执行的代码</strong> 按照 <strong>指定的次数</strong> <strong>重复</strong> 执行</p>
+</li>
+<li><p>需求 —— 打印 5 遍 <code>Hello Python</code></p>
+</li>
+<li><p>思考 —— 如果要求打印 100 遍怎么办？</p>
+</li>
+</ul>
+<h3 id="2-1-while-语句基本语法"><a href="#2-1-while-语句基本语法" class="headerlink" title="2.1 while 语句基本语法"></a>2.1 <code>while</code> 语句基本语法</h3><pre>    `初始条件设置 —— 通常是重复执行的 计数器 while 条件(判断 计数器 是否达到 目标次数): 条件满足时，做的事情1 条件满足时，做的事情2
+      条件满足时，做的事情3 ...(省略)... 处理条件(计数器 + 1)
+` 
+  </pre>
+
+<p><strong>注意</strong>：</p>
+<ul>
+<li><code>while</code> 语句以及缩进部分是一个 <strong>完整的代码块</strong></li>
+</ul>
+<h4 id="第一个-while-循环"><a href="#第一个-while-循环" class="headerlink" title="第一个 while 循环"></a>第一个 while 循环</h4><p><strong>需求</strong></p>
+<ul>
+<li>打印 5 遍 Hello Python</li>
+</ul>
+<pre>    `# 1\. 定义重复次数计数器 i = 1 # 2\. 使用 while 判断条件 while i <= 1="" 5:="" #="" 要重复执行的代码="" print("hello="" python")="" 处理计数器="" i="" +="" print("循环结束后的="" %="" i)="" `="" <="" pre="">
+
+<blockquote>
+<p>注意：循环结束后，之前定义的计数器条件的数值是依旧存在的</p>
+</blockquote>
+<h4 id="死循环"><a href="#死循环" class="headerlink" title="死循环"></a>死循环</h4><blockquote>
+<p>由于程序员的原因， <strong>忘记</strong> 在循环内部 <strong>修改循环的判断条件</strong>，导致循环持续执行，程序无法终止！</p>
+</blockquote>
+<h3 id="2-2-赋值运算符"><a href="#2-2-赋值运算符" class="headerlink" title="2.2 赋值运算符"></a>2.2 赋值运算符</h3><ul>
+<li>在 Python 中，使用 <code>=</code> 可以给变量赋值</li>
+<li>在算术运算时，为了简化代码的编写， <code>Python</code> 还提供了一系列的 与 <strong>算术运算符</strong> 对应的 <strong>赋值运算符</strong></li>
+<li>注意： <strong>赋值运算符中间不能使用空格</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>=</td>
+<td>简单的赋值运算符</td>
+<td>c = a + b 将 a + b 的运算结果赋值为 c</td>
+</tr>
+<tr>
+<td>+=</td>
+<td>加法赋值运算符</td>
+<td>c += a 等效于 c = c + a</td>
+</tr>
+<tr>
+<td>-=</td>
+<td>减法赋值运算符</td>
+<td>c -= a 等效于 c = c - a</td>
+</tr>
+<tr>
+<td>*=</td>
+<td>乘法赋值运算符</td>
+<td>c <em>= a 等效于 c = c </em> a</td>
+</tr>
+<tr>
+<td>/=</td>
+<td>除法赋值运算符</td>
+<td>c /= a 等效于 c = c / a</td>
+</tr>
+<tr>
+<td>//=</td>
+<td>取整除赋值运算符</td>
+<td>c //= a 等效于 c = c // a</td>
+</tr>
+<tr>
+<td>%=</td>
+<td>取 <strong>模</strong> (余数)赋值运算符</td>
+<td>c %= a 等效于 c = c % a</td>
+</tr>
+<tr>
+<td>**=</td>
+<td>幂赋值运算符</td>
+<td>c <strong>= a 等效于 c = c </strong> a</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-3-Python-中的计数方法"><a href="#2-3-Python-中的计数方法" class="headerlink" title="2.3 Python 中的计数方法"></a>2.3 Python 中的计数方法</h3><p>常见的计数方法有两种，可以分别称为：</p>
+<ul>
+<li><strong>自然计数法</strong>（从 <code>1</code> 开始）—— 更符合人类的习惯</li>
+<li><strong>程序计数法</strong>（从 <code>0</code> 开始）—— 几乎所有的程序语言都选择从 0 开始计数</li>
+</ul>
+<p>因此，大家在编写程序时，应该尽量养成习惯： <strong>除非需求的特殊要求，否则 循环 的计数都从 0 开始</strong></p>
+<h3 id="2-4-循环计算"><a href="#2-4-循环计算" class="headerlink" title="2.4 循环计算"></a>2.4 循环计算</h3><blockquote>
+<p>在程序开发中，通常会遇到 <strong>利用循环</strong> <strong>重复计算</strong> 的需求</p>
+</blockquote>
+<p>遇到这种需求，可以：</p>
+<ol>
+<li>在 <code>while</code> 上方定义一个变量，用于 <strong>存放最终计算结果</strong></li>
+<li>在循环体内部，每次循环都用 <strong>最新的计算结果</strong>， <strong>更新</strong> 之前定义的变量</li>
+</ol>
+<p><strong>需求</strong></p>
+<ul>
+<li>计算 0 ~ 100 之间所有数字的累计求和结果</li>
+</ul>
+<pre>    `# 计算 0 ~ 100 之间所有数字的累计求和结果 # 0\. 定义最终结果的变量 result = 0 # 1\. 定义一个整数的变量记录循环的次数
+      i = 0 # 2\. 开始循环 while i <= 100:="" print(i)="" #="" 每一次循环，都让="" result="" 这个变量和="" i="" 这个计数器相加="" +="i" 处理计数器="" print("0~100之间的数字求和结果="%d" "="" %="" result)="" `="" <="" pre="">
+
+<h4 id="需求进阶"><a href="#需求进阶" class="headerlink" title="需求进阶"></a>需求进阶</h4><ul>
+<li>计算 0 ~ 100 之间 所有 <strong>偶数</strong> 的累计求和结果</li>
+</ul>
+<p>开发步骤</p>
+<ol>
+<li>编写循环 <strong>确认</strong> <strong>要计算的数字</strong></li>
+<li>添加 <strong>结果</strong> 变量，在循环内部 <strong>处理计算结果</strong></li>
+</ol>
+<pre>    `# 0\. 最终结果 result = 0 # 1\. 计数器 i = 0 # 2\. 开始循环 while i <= 2="=" 100:="" #="" 判断偶数="" if="" i="" %="" 0:="" print(i)="" result="" +="i" 处理计数器="" print("0~100之间偶数求和结果="%d" "="" result)="" `="" <="" pre="">
+
+<h2 id="03-break-和-continue"><a href="#03-break-和-continue" class="headerlink" title="03. break 和 continue"></a>03. break 和 continue</h2><blockquote>
+<p><code>break</code> 和 <code>continue</code> 是专门在循环中使用的关键字</p>
+</blockquote>
+<ul>
+<li><code>break</code> <strong>某一条件满足时</strong>，退出循环，不再执行后续重复的代码</li>
+<li><code>continue</code> <strong>某一条件满足时</strong>，不执行后续重复的代码</li>
+</ul>
+<blockquote>
+<p><code>break</code> 和 <code>continue</code> 只针对 <strong>当前所在循环</strong> 有效</p>
+</blockquote>
+<p><img src="https://i.loli.net/2018/12/17/5c17510ed1c4b.jpg" alt="002_循环流程图">￼</p>
+<h3 id="3-1-break"><a href="#3-1-break" class="headerlink" title="3.1 break"></a>3.1 break</h3><ul>
+<li><strong>在循环过程中</strong>，如果 <strong>某一个条件满足后</strong>， <strong>不</strong> 再希望 <strong>循环继续执行</strong>，可以使用 <code>break</code> 退出循环</li>
+</ul>
+<pre>    `i = 0 while i < 10: # break 某一条件满足时，退出循环，不再执行后续重复的代码 # i == 3 if i == 3:
+      break print(i) i += 1 print("over")
+` 
+  </pre>
+
+<blockquote>
+<p><code>break</code> 只针对当前所在循环有效</p>
+</blockquote>
+<h3 id="3-2-continue"><a href="#3-2-continue" class="headerlink" title="3.2 continue"></a>3.2 continue</h3><ul>
+<li><strong>在循环过程中</strong>，如果 <strong>某一个条件满足后</strong>， <strong>不</strong> 希望 <strong>执行循环代码，但是又不希望退出循环</strong>，可以使用 <code>continue</code></li>
+<li>也就是：在整个循环中， <strong>只有某些条件</strong>，不需要执行循环代码，而其他条件都需要执行</li>
+</ul>
+<pre>    `i = 0 while i < 10: # 当 i == 7 时，不希望执行需要重复执行的代码 if i == 7: # 在使用 continue
+      之前，同样应该修改计数器 # 否则会出现死循环 i += 1 continue # 重复执行的代码 print(i) i += 1
+
+` 
+  </pre>
+
+<ul>
+<li>需要注意：使用 <code>continue</code> 时， <strong>条件处理部分的代码，需要特别注意</strong>，不小心会出现 <strong>死循环</strong></li>
+</ul>
+<blockquote>
+<p><code>continue</code> 只针对当前所在循环有效</p>
+</blockquote>
+<h2 id="04-while-循环嵌套"><a href="#04-while-循环嵌套" class="headerlink" title="04. while 循环嵌套"></a>04. <code>while</code> 循环嵌套</h2><h3 id="4-1-循环嵌套"><a href="#4-1-循环嵌套" class="headerlink" title="4.1 循环嵌套"></a>4.1 循环嵌套</h3><ul>
+<li><code>while</code> 嵌套就是： <code>while</code> 里面还有 <code>while</code></li>
+</ul>
+<pre>    `while 条件 1: 条件满足时，做的事情1 条件满足时，做的事情2 条件满足时，做的事情3 ...(省略)... while 条件 2: 条件满足时，做的事情1
+      条件满足时，做的事情2 条件满足时，做的事情3 ...(省略)... 处理条件 2 处理条件 1
+` 
+  </pre>
+
+<h3 id="4-2-循环嵌套演练-——-九九乘法表"><a href="#4-2-循环嵌套演练-——-九九乘法表" class="headerlink" title="4.2 循环嵌套演练 —— 九九乘法表"></a>4.2 循环嵌套演练 —— 九九乘法表</h3><h4 id="第-1-步：用嵌套打印小星星"><a href="#第-1-步：用嵌套打印小星星" class="headerlink" title="第 1 步：用嵌套打印小星星"></a>第 1 步：用嵌套打印小星星</h4><p><strong>需求</strong></p>
+<ul>
+<li>在控制台连续输出五行 <code>*</code>，每一行星号的数量依次递增</li>
+</ul>
+<pre>    `* ** *** **** *****
+` 
+  </pre>
+
+<ul>
+<li>使用字符串 * 打印</li>
+</ul>
+<pre>    `# 1\. 定义一个计数器变量，从数字1开始，循环会比较方便 row = 1 while row <= 5:="" print("*"="" *="" row)="" row="" +="1" `="" <="" pre="">
+
+<h4 id="第-2-步：使用循环嵌套打印小星星"><a href="#第-2-步：使用循环嵌套打印小星星" class="headerlink" title="第 2 步：使用循环嵌套打印小星星"></a>第 2 步：使用循环嵌套打印小星星</h4><p><strong>知识点</strong> 对 <code>print</code> 函数的使用做一个增强</p>
+<ul>
+<li>在默认情况下， <code>print</code> 函数输出内容之后，会自动在内容末尾增加换行</li>
+<li>如果不希望末尾增加换行，可以在 <code>print</code> 函数输出内容的后面增加 <code>, end=&quot;&quot;</code></li>
+<li><p>其中 <code>&quot;&quot;</code> 中间可以指定 <code>print</code> 函数输出内容之后，继续希望显示的内容</p>
+</li>
+<li><p>语法格式如下：</p>
+</li>
+</ul>
+<pre>    `# 向控制台输出内容结束之后，不会换行 print("*", end="") # 单纯的换行 print("")
+` 
+  </pre>
+
+<blockquote>
+<p><code>end=&quot;&quot;</code> 表示向控制台输出内容结束之后，不会换行</p>
+</blockquote>
+<p><strong>假设</strong> <code>Python</code> <strong>没有提供</strong> 字符串的 <code>*</code> 操作 <strong>拼接字符串</strong></p>
+<p><strong>需求</strong></p>
+<ul>
+<li>在控制台连续输出五行 <code>*</code>，每一行星号的数量依次递增</li>
+</ul>
+<pre>    `* ** *** **** *****
+` 
+  </pre>
+
+<p><strong>开发步骤</strong></p>
+<ul>
+<li>1&gt; 完成 5 行内容的简单输出</li>
+<li>2&gt; 分析每行内部的 <code>*</code> 应该如何处理？<ul>
+<li>每行显示的星星和当前所在的行数是一致的</li>
+<li>嵌套一个小的循环，专门处理每一行中 <code>列</code> 的星星显示</li>
+</ul>
+</li>
+</ul>
+<pre>    `row = 1 while row <= 5:="" #="" 假设="" python="" 没有提供字符串="" *="" 操作="" 在循环内部，再增加一个循环，实现每一行的="" 星星="" 打印="" col="1" while="" <="row:" print("*",="" end="" )="" +="1" 每一行星号输出完成后，再增加一个换行="" print("")="" row="" `="" pre="">
+
+<h4 id="第-3-步：-九九乘法表"><a href="#第-3-步：-九九乘法表" class="headerlink" title="第 3 步： 九九乘法表"></a>第 3 步： 九九乘法表</h4><p><strong>需求</strong> 输出 九九乘法表，格式如下：</p>
+<pre>    `1 * 1 = 1 1 * 2 = 2 2 * 2 = 4 1 * 3 = 3 2 * 3 = 6 3 * 3 = 9 1 * 4 = 4 2 * 4
+      = 8 3 * 4 = 12 4 * 4 = 16 1 * 5 = 5 2 * 5 = 10 3 * 5 = 15 4 * 5 = 20 5 *
+      5 = 25 1 * 6 = 6 2 * 6 = 12 3 * 6 = 18 4 * 6 = 24 5 * 6 = 30 6 * 6 = 36 1
+      * 7 = 7 2 * 7 = 14 3 * 7 = 21 4 * 7 = 28 5 * 7 = 35 6 * 7 = 42 7 * 7 = 49
+      1 * 8 = 8 2 * 8 = 16 3 * 8 = 24 4 * 8 = 32 5 * 8 = 40 6 * 8 = 48 7 * 8 =
+      56 8 * 8 = 64 1 * 9 = 9 2 * 9 = 18 3 * 9 = 27 4 * 9 = 36 5 * 9 = 45 6 * 9
+      = 54 7 * 9 = 63 8 * 9 = 72 9 * 9 = 81
+
+` 
+  </pre>
+
+<p><strong>开发步骤</strong></p>
+<ul>
+<li>1. 打印 9 行小星星</li>
+</ul>
+<pre>    `* ** *** **** ***** ****** ******* ******** *********
+` 
+  </pre>
+
+<ul>
+<li>2. 将每一个 <code>*</code> 替换成对应的行与列相乘</li>
+</ul>
+<pre>    `# 定义起始行 row = 1 # 最大打印 9 行 while row <= 1="" 9:="" #="" 定义起始列="" col="1" 最大打印="" row="" 列="" while="" <="row:" end="" ，表示输出结束后，不换行="" "\t"="" 可以在控制台输出一个制表符，协助在输出文本时对齐="" print("%d="" *="" %d="%d" "="" %="" (col,="" row,="" col),="" )="" 列数="" +="" 一行打印完成的换行="" print("")="" 行数="" `="" pre="">
+
+<p><strong>字符串中的转义字符</strong></p>
+<ul>
+<li><code>\t</code> 在控制台输出一个 <strong>制表符</strong>，协助在输出文本时 <strong>垂直方向</strong> 保持对齐</li>
+<li><code>\n</code> 在控制台输出一个 <strong>换行符</strong></li>
+</ul>
+<blockquote>
+<p><strong>制表符</strong> 的功能是在不使用表格的情况下在 <strong>垂直方向</strong> 按列对齐文本</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>转义字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\</td>
+<td>反斜杠符号</td>
+</tr>
+<tr>
+<td>\’</td>
+<td>单引号</td>
+</tr>
+<tr>
+<td>\”</td>
+<td>双引号</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>换行</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>横向制表符</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>回车</td>
+</tr>
+</tbody>
+</table>
+<p><a href="mailto:&#x2f;&#115;&#111;&#x75;&#x72;&#x64;&#114;&#x75;&#x6d;&#115;&#x40;&#x67;&#109;&#x61;&#x69;&#108;&#x2e;&#99;&#x6f;&#109;" target="_blank" rel="noopener">&#x2f;&#115;&#111;&#x75;&#x72;&#x64;&#114;&#x75;&#x6d;&#115;&#x40;&#x67;&#109;&#x61;&#x69;&#108;&#x2e;&#99;&#x6f;&#109;</a></p>
+</=></pre></=></pre></=></pre></=></pre></=></pre></=></pre>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+               <div id="needsharebutton-postbottom">
+                 <span class="btn">
+                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                 </span>
+               </div>
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2018/12/17/11_运算符/" rel="next" title="11_运算符">
+                <i class="fa fa-chevron-left"></i> 11_运算符
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2018/12/17/13_函数基础/" rel="prev" title="13_函数基础">
+                13_函数基础 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/blog/images/avatar.gif" alt="鐺鐺鐺™">
+            
+              <p class="site-author-name" itemprop="name">鐺鐺鐺™</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/blog/archives/">
+                
+                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/blog/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/PAINCLOWN" title="GitHub &rarr; https://github.com/PAINCLOWN" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:pozz@vip.qq.com" title="E-Mail &rarr; mailto:pozz@vip.qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://twitter.com/Pa1ncl0wn" title="Twitter &rarr; https://twitter.com/Pa1ncl0wn" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#循环"><span class="nav-number">1.</span> <span class="nav-text">循环</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#目标"><span class="nav-number">1.1.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#01-程序的三大流程"><span class="nav-number">1.2.</span> <span class="nav-text">01. 程序的三大流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#02-while-循环基本使用"><span class="nav-number">1.3.</span> <span class="nav-text">02. while 循环基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-while-语句基本语法"><span class="nav-number">1.3.1.</span> <span class="nav-text">2.1 while 语句基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一个-while-循环"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">第一个 while 循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#死循环"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">死循环</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-赋值运算符"><span class="nav-number">1.3.2.</span> <span class="nav-text">2.2 赋值运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-Python-中的计数方法"><span class="nav-number">1.3.3.</span> <span class="nav-text">2.3 Python 中的计数方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-循环计算"><span class="nav-number">1.3.4.</span> <span class="nav-text">2.4 循环计算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#需求进阶"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">需求进阶</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#03-break-和-continue"><span class="nav-number">1.4.</span> <span class="nav-text">03. break 和 continue</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-break"><span class="nav-number">1.4.1.</span> <span class="nav-text">3.1 break</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-continue"><span class="nav-number">1.4.2.</span> <span class="nav-text">3.2 continue</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#04-while-循环嵌套"><span class="nav-number">1.5.</span> <span class="nav-text">04. while 循环嵌套</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-循环嵌套"><span class="nav-number">1.5.1.</span> <span class="nav-text">4.1 循环嵌套</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-循环嵌套演练-——-九九乘法表"><span class="nav-number">1.5.2.</span> <span class="nav-text">4.2 循环嵌套演练 —— 九九乘法表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第-1-步：用嵌套打印小星星"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">第 1 步：用嵌套打印小星星</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第-2-步：使用循环嵌套打印小星星"><span class="nav-number">1.5.2.2.</span> <span class="nav-text">第 2 步：使用循环嵌套打印小星星</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第-3-步：-九九乘法表"><span class="nav-number">1.5.2.3.</span> <span class="nav-text">第 3 步： 九九乘法表</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+<div>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="//music.163.com/outchain/player?type=2&id=1317145091&auto=0&height=32"></iframe>
+</div>
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">鐺鐺鐺™</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+<i class="fa fa-user-md"> | </i><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1275152149'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1275152149%26online%3D2' type='text/javascript'%3E%3C/script%3E"));</script>
+
+        
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1275152149&web_id=1275152149" language="JavaScript"></script>
+  </div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+      
+  
+  <script color="243,59,31" opacity="0.9" zindex="-1" count="80" src="/blog/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script src="/blog/js/src/utils.js?v=6.6.0"></script>
+
+  <script src="/blog/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/blog/js/src/affix.js?v=6.6.0"></script>
+
+  <script src="/blog/js/src/schemes/pisces.js?v=6.6.0"></script>
+
+
+
+  
+  <script src="/blog/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/blog/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script src="/blog/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+  <script>
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'MMrWPDbRIVDuiQKQbKYfYG54-gzGzoHsz',
+        appKey: 'yd55FCcOxDFUTQSvcKFO11Wg',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: false
+    });
+  </script>
+
+
+
+
+  
+
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/blog/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/blog/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<script src="/blog/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/blog/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":75,"height":150},"mobile":{"show":true},"log":false});</script></body>
+</html>
+<script type="text/javascript">var a_idx = 0;jQuery(document).ready(function($) {    $("body").click(function(e) {        var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正" ,"法治", "爱国", "敬业", "诚信", "友善");        var $i = $("<span />").text(a[a_idx]);        a_idx = (a_idx + 1) % a.length;        var x = e.pageX,        y = e.pageY;        $i.css({            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,            "top": y - 20,            "left": x,            "position": "absolute",            "font-weight": "bold",            "color": "#ff6651"        });        $("body").append($i);        $i.animate({            "top": y - 180,            "opacity": 0        },        1500,        function() {            $i.remove();        });    });});</script>
